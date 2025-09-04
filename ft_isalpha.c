@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabu-aho <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mabu-aho <mabu-aho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 23:41:25 by mabu-aho          #+#    #+#             */
-/*   Updated: 2025/08/10 00:30:29 by mabu-aho         ###   ########.fr       */
+/*   Updated: 2025/09/04 03:19:50 by mabu-aho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 //#include<ctype.h>
 #include "libft.h"
 
-int	ft_isalpha(char c)
+int	ft_isalpha(int  c)
 {
 	if ((c >= 'A' && c <= 'Z' ) || (c >= 'a' && c <= 'z'))
 		return (1024);

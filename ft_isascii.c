@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabu-aho <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mabu-aho <mabu-aho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 04:13:42 by mabu-aho          #+#    #+#             */
-/*   Updated: 2025/08/10 04:30:01 by mabu-aho         ###   ########.fr       */
+/*   Updated: 2025/09/04 03:32:29 by mabu-aho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 //#include <ctype.h> // For the standard isascii to compare against
 #include "libft.h"
 
-int	ft_isascii(char c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);
-	else
-		return (0);
+	return (0);
 }
 /*
 void test_char(int c)

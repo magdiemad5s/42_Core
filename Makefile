@@ -3,15 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mabu-aho <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: mabu-aho <mabu-aho@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/07 11:02:54 by mabu-aho          #+#    #+#              #
-#    Updated: 2025/08/10 00:03:03 by mabu-aho         ###   ########.fr        #
+#    Updated: 2025/09/04 03:31:08 by mabu-aho         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ft_isalpha.c
-
+SRCS = ft_isalpha.c \
+	ft_isdigit.c \
+	ft_isalnum.c \
+	ft_isascii.c \
+	ft_isprint.c \
+	ft_strlen.c \
+	ft_memset.c
 OBJS = $(SRCS:.c=.o)
 
 #BONUS = 

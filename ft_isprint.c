@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabu-aho <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mabu-aho <mabu-aho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 04:13:42 by mabu-aho          #+#    #+#             */
-/*   Updated: 2025/08/10 04:44:31 by mabu-aho         ###   ########.fr       */
+/*   Updated: 2025/09/04 03:33:02 by mabu-aho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 //#include <ctype.h> // For the standard isprint to compare against
 #include "libft.h"
 
-int	ft_isprint(char c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (16384);
