@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabu-aho <mabu-aho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/04 04:50:17 by mabu-aho          #+#    #+#             */
-/*   Updated: 2025/09/04 05:34:41 by mabu-aho         ###   ########.fr       */
+/*   Created: 2025/09/04 21:02:35 by mabu-aho          #+#    #+#             */
+/*   Updated: 2025/09/05 03:19:59 by mabu-aho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	char	*ptr;
+	size_t	srclen;
 
-	ptr = (char *)s;
-	while (n > 0)
+	srclen = ft_strlen(src);
+	if (srclen + 1 < dstsize)
+		ft_memcpy(dst, src, srclen + 1);
+	else if (dstsize != 0)
 	{
-		*(ptr++) = 0;
-		n--;
+		ft_memcpy(dst, src, dstsize - 1);
+		dst[dstsize - 1] = 0;
 	}
+	return (srclen);
 }
-
-// ft_memset(s, 0, n);

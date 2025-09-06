@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabu-aho <mabu-aho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/04 04:50:17 by mabu-aho          #+#    #+#             */
-/*   Updated: 2025/09/04 05:34:41 by mabu-aho         ###   ########.fr       */
+/*   Created: 2025/09/05 22:25:20 by mabu-aho          #+#    #+#             */
+/*   Updated: 2025/09/06 03:50:33 by mabu-aho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char	*ptr;
+	size_t	i;
+	size_t	j;
 
-	ptr = (char *)s;
-	while (n > 0)
+	i = 0;
+	j = 0;
+	if (needle[0] == 0)
+		return ((char *)haystack);
+	while (haystack[i] && i < len)
 	{
-		*(ptr++) = 0;
-		n--;
+		while (haystack[i + j] == needle[j] && haystack[i + j] && i + j < len)
+		{
+			j++;
+			if (needle[j] == 0)
+				return ((char *)haystack + i);
+		}
+		i++;
+		j = 0;
 	}
+	return (0);
 }
 
-// ft_memset(s, 0, n);
+/*
+
+*/

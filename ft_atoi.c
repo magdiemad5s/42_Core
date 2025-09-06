@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabu-aho <mabu-aho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/04 04:50:17 by mabu-aho          #+#    #+#             */
-/*   Updated: 2025/09/04 05:34:41 by mabu-aho         ###   ########.fr       */
+/*   Created: 2025/09/06 04:04:08 by mabu-aho          #+#    #+#             */
+/*   Updated: 2025/09/06 04:34:27 by mabu-aho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int	ft_atoi(const char *str)
 {
-	char	*ptr;
+	int	res;
+	int	sign;
+	int	i;
 
-	ptr = (char *)s;
-	while (n > 0)
+	res = 0;
+	sign = 1;
+	i = 0;
+	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		*(ptr++) = 0;
-		n--;
+		if (str[i] == '-')
+			sign = -1;
+		i++;
 	}
+	while (str[i] && str[i] >= 48 && str[i] <= 57)
+	{
+		res *= 10;
+		res += str[i] - 48;
+		i++;
+	}
+	return (res * sign);
 }
-
-// ft_memset(s, 0, n);

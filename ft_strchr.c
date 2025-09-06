@@ -1,27 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabu-aho <mabu-aho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/04 04:50:17 by mabu-aho          #+#    #+#             */
-/*   Updated: 2025/09/04 05:34:41 by mabu-aho         ###   ########.fr       */
+/*   Created: 2025/09/05 04:49:37 by mabu-aho          #+#    #+#             */
+/*   Updated: 2025/09/05 05:22:48 by mabu-aho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
+	while (*s)
+	{
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
+	}
+	if (*s == (char)c)
+		return ((char *)s);
+	return (NULL);
+}
+/*
+char	*ft_strchr(const char *s, int c)
+{
+	size_t	i;
 	char	*ptr;
 
+	i = 0;
 	ptr = (char *)s;
-	while (n > 0)
+	while (s[i] != (char)c && s[i] != '\0')
 	{
-		*(ptr++) = 0;
-		n--;
+		i++;
 	}
+	if (s[i] == (char)c)
+		return (&ptr[i]);
+	else
+		return (NULL);
 }
-
-// ft_memset(s, 0, n);
+*/
