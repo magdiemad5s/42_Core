@@ -6,7 +6,7 @@
 #    By: mabu-aho <mabu-aho@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/07 11:02:54 by mabu-aho          #+#    #+#              #
-#    Updated: 2025/09/06 04:56:43 by mabu-aho         ###   ########.fr        #
+#    Updated: 2025/09/09 07:03:25 by mabu-aho         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,18 @@ SRCS = ft_isalpha.c \
 	ft_strnstr.c \
 	ft_atoi.c \
 	ft_calloc.c \
-	ft_strdup.c
+	ft_strdup.c \
+	ft_substr.c \
+	ft_strjoin.c \
+	ft_strtrim.c \
+	ft_split.c \
+	ft_itoa.c \
+	ft_strmapi.c \
+	ft_striteri.c \
+	ft_putchar_fd.c \
+	ft_putstr_fd.c  \
+	ft_putendl_fd.c \
+	ft_putnbr_fd.c
 OBJS = $(SRCS:.c=.o)
 
 #BONUS = 

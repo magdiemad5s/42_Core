@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabu-aho <mabu-aho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/06 04:35:51 by mabu-aho          #+#    #+#             */
-/*   Updated: 2025/09/07 05:01:35 by mabu-aho         ###   ########.fr       */
+/*   Created: 2025/09/06 20:34:58 by mabu-aho          #+#    #+#             */
+/*   Updated: 2025/09/09 09:03:37 by mabu-aho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	ft_putnbr_fd(int n, int fd)
 {
-	void	*p;
+	long	nb;
 
-	p = malloc(size * count);
-	if (p)
-		ft_bzero(p, size * count);
-	return (p);
+	nb = n;
+	if (nb < 0)
+	{
+		ft_putchar_fd('-', fd);
+		nb = nb * -1;
+	}
+	if (nb > 9)
+	{
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putchar_fd((nb % 10) + '0', fd);
+	}
+	else
+		ft_putchar_fd(nb + 48, fd);
 }
-/*
-{
-	unsigned char	*tmp;
-	size_t			i;
 
-	i = 0;
-	tmp = malloc(size * count);
-	if (!tmp)
-		return (NULL);
-	while (i < count * size)
-		tmp[i++] = 0;
-	return (tmp);
-}
-*/
+//ft_putnbr_fd(nb % 10, fd);

@@ -19,18 +19,18 @@ int	ft_isalnum(int c)
 	return (ft_isdigit(c) || ft_isalpha(c));
 }
 /*
-int main(void)
-{	
-    printf("--- Standard isalnum results ---\n");
-    printf("'c': %d\n", isalnum('c'));
-    printf("'6': %d\n", isalnum('6'));
-    printf("'1': %d\n", isalnum('1'));
-    printf("'A': %d\n", isalnum('A'));
-    printf("'$': %d\n", isalnum('$')); // Test a non-alphanumeric character
+int	main(void)
+{
+	printf("--- Standard isalnum results ---\n");
+	printf("'c': %d\n", isalnum('c'));
+	printf("'6': %d\n", isalnum('6'));
+	printf("'1': %d\n", isalnum('1'));
+	printf("'A': %d\n", isalnum('A'));
+	printf("'$': %d\n", isalnum('$')); // Test a non-alphanumeric character
 
-    printf("\n--- ft_isalnum results ---\n");
-    printf("'c': %d\n", ft_isalnum('c'));
-    printf("'6': %d\n", ft_isalnum('6'));
-    printf("'A': %d\n", ft_isalnum('A'));
-    printf("'$': %d\n", ft_isalnum('$'));
+	printf("\n--- ft_isalnum results ---\n");
+	printf("'c': %d\n", ft_isalnum('c'));
+	printf("'6': %d\n", ft_isalnum('6'));
+	printf("'A': %d\n", ft_isalnum('A'));
+	printf("'$': %d\n", ft_isalnum('$'));
 }*/
