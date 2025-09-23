@@ -12,8 +12,25 @@
 
 #include "libft.h"
 
-static int	count_digits(long n);
-// static void	handle_zero(char **result, long int *nbr);
+static int	count_digits(long n)
+{
+	int	size;
+
+	size = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+	{
+		size++;
+		n = -n;
+	}
+	while (n != 0)
+	{
+		n = n / 10;
+		size++;
+	}
+	return (size);
+}
 
 char	*ft_itoa(int n)
 {
@@ -42,35 +59,6 @@ char	*ft_itoa(int n)
 	}
 	return (ptr);
 }
-
-static int	count_digits(long n)
-{
-	int	size;
-
-	size = 0;
-	if (n == 0)
-		return (1);
-	if (n < 0)
-	{
-		size++;
-		n = -n;
-	}
-	while (n != 0)
-	{
-		n = n / 10;
-		size++;
-	}
-	return (size);
-}
-
-// static void	handle_zero(char **ptr, long int *nb)
-// {
-// 	if (*nb == 0)
-// 	{
-// 		**ptr = '0';
-// 		*nb = -*nb;
-// 	}
-// }
 
 /*
 theory of itoa, integer we get it back to ASCII

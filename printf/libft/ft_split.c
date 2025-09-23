@@ -6,45 +6,11 @@
 /*   By: mabu-aho <mabu-aho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 06:55:02 by mabu-aho          #+#    #+#             */
-/*   Updated: 2025/09/09 09:36:29 by mabu-aho         ###   ########.fr       */
+/*   Updated: 2025/09/09 16:41:56 by mabu-aho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static size_t	count_words(const char *s, char c);
-static char		*fill_word(const char *s, int start, int end);
-static void		*ft_free(char **strs, int count);
-
-static void		ft_initiate_vars(size_t *i, int *j, int *s_word);
-
-char	**ft_split(const char *s, char c)
-{
-	char	**res;
-	size_t	i;
-	int		j;
-	int		s_word;
-
-	ft_initiate_vars(&i, &j, &s_word);
-	res = ft_calloc(count_words(s, c) + 1, sizeof(char *));
-	if (!res)
-		return (NULL);
-	while (i <= ft_strlen(s))
-	{
-		if (s[i] != c && s_word < 0)
-			s_word = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && s_word >= 0)
-		{
-			res[j] = fill_word(s, s_word, i);
-			if (!res[j])
-				return (ft_free(res, j));
-			s_word = -1;
-			j++;
-		}
-		i++;
-	}
-	return (res);
-}
 
 static void	ft_initiate_vars(size_t *i, int *j, int *s_word)
 {
@@ -108,6 +74,35 @@ static void	*ft_free(char **strs, int count)
 	free(strs);
 	return (NULL);
 }
+
+char	**ft_split(const char *s, char c)
+{
+	char	**res;
+	size_t	i;
+	int		j;
+	int		s_word;
+
+	ft_initiate_vars(&i, &j, &s_word);
+	res = ft_calloc(count_words(s, c) + 1, sizeof(char *));
+	if (!res)
+		return (NULL);
+	while (i <= ft_strlen(s))
+	{
+		if (s[i] != c && s_word < 0)
+			s_word = i;
+		else if ((s[i] == c || i == ft_strlen(s)) && s_word >= 0)
+		{
+			res[j] = fill_word(s, s_word, i);
+			if (!res[j])
+				return (ft_free(res, j));
+			s_word = -1;
+			j++;
+		}
+		i++;
+	}
+	return (res);
+}
+
 /*
 what we need:
 count len of a strings we about to split

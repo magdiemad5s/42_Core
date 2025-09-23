@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabu-aho <mabu-aho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/06 04:35:51 by mabu-aho          #+#    #+#             */
-/*   Updated: 2025/09/07 05:01:35 by mabu-aho         ###   ########.fr       */
+/*   Created: 2025/09/04 06:57:58 by mabu-aho          #+#    #+#             */
+/*   Updated: 2025/09/04 20:33:39 by mabu-aho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	void	*p;
+	unsigned char	*src_ptr;
+	unsigned char	*dst_ptr;
 
-	p = malloc(size * count);
-	if (p)
-		ft_bzero(p, size * count);
-	return (p);
+	src_ptr = (unsigned char *)src;
+	dst_ptr = (unsigned char *)dest;
+	if (src_ptr > dst_ptr)
+		return (ft_memcpy(dst_ptr, src_ptr, n));
+	else
+	{
+		while (n--)
+			dst_ptr[n] = src_ptr[n];
+	}
+	return (dest);
 }
-/*
-{
-	unsigned char	*tmp;
-	size_t			i;
-
-	i = 0;
-	tmp = malloc(size * count);
-	if (!tmp)
-		return (NULL);
-	while (i < count * size)
-		tmp[i++] = 0;
-	return (tmp);
-}
-*/

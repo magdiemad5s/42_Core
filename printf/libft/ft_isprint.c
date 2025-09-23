@@ -6,12 +6,10 @@
 /*   By: mabu-aho <mabu-aho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 04:13:42 by mabu-aho          #+#    #+#             */
-/*   Updated: 2025/09/04 03:33:02 by mabu-aho         ###   ########.fr       */
+/*   Updated: 2025/09/11 20:33:07 by mabu-aho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h> // For printf
-//#include <ctype.h> // For the standard isprint to compare against
 #include "libft.h"
 
 int	ft_isprint(int c)
@@ -22,6 +20,8 @@ int	ft_isprint(int c)
 		return (0);
 }
 /*
+//#include <stdio.h> // For printf
+//#include <ctype.h> // For the standard isprint to compare against
 void	test_char(int c)
 {
 	printf("Char: '%c' (Dec: %d, Hex: 0x%X)\n", (char)c, c, c);

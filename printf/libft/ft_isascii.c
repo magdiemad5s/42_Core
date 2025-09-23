@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h> // For printf
-//#include <ctype.h> // For the standard isascii to compare against
 #include "libft.h"
 
 int	ft_isascii(int c)
@@ -21,6 +19,8 @@ int	ft_isascii(int c)
 	return (0);
 }
 /*
+//#include <stdio.h> // For printf
+//#include <ctype.h> // For the standard isascii to compare against
 void	test_char(int c)
 {
 	// Cast to char for printing, but pass int to functions as per ctype.h

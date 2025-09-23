@@ -46,10 +46,6 @@ SRCS = ft_isalpha.c \
 	ft_putnbr_fd.c
 OBJS = $(SRCS:.c=.o)
 
-#BONUS = 
-
-#BONUS_OBJS = $(BONUS:.c=.o)
-
 CC = cc
 RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -I.
@@ -62,7 +58,7 @@ $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 clean:
-	$(RM) $(OBJS) #$(BONUS_OBJS)
+	$(RM) $(OBJS) 
 
 fclean: clean
 	$(RM) $(NAME)
