@@ -16,8 +16,19 @@
 
 #include <stdarg.h>
 #include <unistd.h>
-#include "libft/libft.h"
+# include <stdlib.h>
 
-int ft_printf(const char *format, ...);
+# define HEX_UPP_BASE "0123456789ABCDEF"
+# define HEX_LOW_BASE "0123456789abcdef"
+
+int ft_printf(const char *strn, ...);
+void	ft_putchar_pf(char c, size_t *counter);
+void	ft_putstr_pf(char *str, size_t *counter);
+void	ft_putnbr_pf(int num, size_t *counter);
+void	ft_putuint_pf(unsigned int num, size_t *counter);
+void	ft_puthex_pf(unsigned int num, size_t *counter, char *base);
+void	ft_putptr_pf(void *ptr, size_t *counter);
+
+char	*ft_aux_pf(unsigned long long n, char *base);
 
 #endif
